@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAADQwbjfz8Ln2Mrp2cro2cvErpqsnI90a2Q0LywxND4sND4zLR/Ryrl6f3ovNTIpKyjfz8Pl1cnr3c/y49Xo18ekjGFGPjkyOERgcJhmeKttf65sbXNqY1s7QkAxNzYlKynr3NDt39Lv5drs28/q1sGTektdYnR8jrpuf6ZbaZZVaJVUUl5URzg7REIzOjgnLiz06+Pz7un06+Hz6N3FvKfAs5Cvut6VosZyfJlaZIBPV3RQWHthUUE7REM0OjknLSy3sKnAt622rqO9t69tYVK2r529yeafp7mPlqaHkaxocYVKWHtTWnc7Q0AzOTgoLi1SRT5RQjZFLh1ALRxALR1OOSqzuc6hqrirs856grFkcqNLW4VjdapgaYYzOjklLSpEMidSSD5MOS1KMyNLNCNLMiGfpLiLmLGBiaxlbZtJUX1ZaJxofbJneLFIT2QkLCpTYoJWVlxIPztTOypTOSdSOii5wNSjr9SKlL1ncJZNWoyOms2ZqdZwg65NVWwgKSR1iq1HWYNNU2pcWGJXV3dfT020udLCyd2stdm+xeqjsttnc5pVZY9oeJtXXV4iKCWUqMqLo8GEl71+k7Z4jLiUnK2IkY+OlZqNl6Jod6CTpMxMW4t8j7J9jrJsc3kuNDKvwt6Yrc2OoMeWqclzhqyUnLtzdnWZnp6mrLOSnsOhq9ist92RosyBlLlrdXkxNje/y+qpvteGnMORp8isvdvJzM3BwrvL0szK0dbN1+6yvd+bpsxqep09TGg/S1QvNjOpqre9zuO2xOOtuM2xudC2tLaun5G9wr7HztjY4fK3wt99i6ZNXG9RXm5RYGYsMzGYc0+ynoyzxOKfsdq4vdGUfmu8q5axvL2Zpqy4xc6quMh8jp51ipppeoM+S0lhal7Nuqve0MPl4d65wsu7t6yhpZ+Zp6Sfra+xw8mitb63ytWuxtKAk5lJVVRLV1OGkX2DpIuPsJyKm55vfXyXpaedqaiaqKiap6aXpKOVoqGQnp56iIZib29QXF1RXFmNl4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" />
   <title>Drag Files Here to Create Data URIs</title>
   <style>
     body {
@@ -14,6 +15,7 @@
     #input {
       height: 100px;
       width: 100%;
+      /* background image by squidfingers, at http://squidfingers.com/patterns ... I used this tool to convert it. */
       background: gray url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAIAAADIYSy/AAACwUlEQVRYhbWWsWvbQBTGX+FCG0IMUpsEksGmFOOAl4JCyZolf2GXDv0/vGgtIYIsgZgMQR4SSBzHICNsYw8dPnJ6ene6g/b0JnH67u53T0/3vg+/f/28vEioHrObh47aEYPp9Ln/YyAG1+VqcPhFDI7SzFxz/PL6ce+TGLy/Gl8cHInBYrv5/P2rGFRYgojM/fhMIuoOe/dXYyIycSvlooQSD539vSYlluoOe8VjQURmXnQATxERDmrFBSLON315BaIVl5M9LZd4sOLy6etyhcVnNw8mLpCAp/Qoxz2oI4rguO7kcdymEyI4rkBEKDEB77J5bhZZE+7ApwTun+s7R81w3FGa9fuH4pUEXZcrPIzSjIgcuFCen50iDdbcIyA4Pzt9KpdUz5MIbKoXt2cU71CjE8oduFxZLEr+1QQuHywWJaaYn5UjIkylEhs7Dtod9hzKWpGddBxp5hAmYpNSuRF5TG79hQuyLM28hYtNHZRCqajhq5mRRLFXidMnUey9m7FUEsXZ/M29L5SK3m8vBwQSqduVVcnJZo8F/2oCl1+ZxXaDxa2p5crqZ+IQAlEEV+58O3Ikj+Me7+5ab3W+kcY1lfJ60u+85Qhlen3nVepyNNt6E655GAmq27q3yNLpMxElUext6xAkUYwpDlxsajUAFaho6w4DwPcrthtHW+eDs/cpVlx+ZVoNgCJnWxcGwJES0dYdaea4+n6wtiuOq5oQTdxsnnuLDGSj+dvlvmdNjWu2dSuuasM7UgseV1H9qwXxjtSCx2X3aDjvqCOgxzXu0RDe0Yr7nx5XggbxjiKCeNwKNKB3FBsH8bge9/Rv3pFa8LhqcpsH944TyoN7XNWGd6QWPG7l8AN6R2rB41Y/U0DvqCOgx5XXUxDvaIVoQjSVVo9r+NEQ3lGuGcLjMj8azjsKxCAeV1EL3pFa8Lh/AYbh2AJduVUxAAAAAElFTkSuQmCC) 0 0;
       color: #fff;
       text-shadow: 0 0 5px #000;
@@ -149,7 +151,7 @@
         };
       }());
       $.w.addEventListener('load', $.f.init, false);  
-    }(window, document, {'k': 'URLIFY'}));
+    }(window, document, {'k': 'DRAGTODATAURI'}));
   </script>
 </body>
 </html>
