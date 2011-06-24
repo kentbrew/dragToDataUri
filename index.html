@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Drag Files Here to Create Data URIs</title>
-	<style>
+  <title>Drag Files Here to Create Data URIs</title>
+  <style>
     body {
       text-align: center;
       font-family: helvetica neue;
@@ -11,17 +11,17 @@
       width: 800px;
       margin: 0 auto;
     }
-		#input {
-			height: 100px;
-			width: 100%;
-			background: gray url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAIAAADIYSy/AAACwUlEQVRYhbWWsWvbQBTGX+FCG0IMUpsEksGmFOOAl4JCyZolf2GXDv0/vGgtIYIsgZgMQR4SSBzHICNsYw8dPnJ6ene6g/b0JnH67u53T0/3vg+/f/28vEioHrObh47aEYPp9Ln/YyAG1+VqcPhFDI7SzFxz/PL6ce+TGLy/Gl8cHInBYrv5/P2rGFRYgojM/fhMIuoOe/dXYyIycSvlooQSD539vSYlluoOe8VjQURmXnQATxERDmrFBSLON315BaIVl5M9LZd4sOLy6etyhcVnNw8mLpCAp/Qoxz2oI4rguO7kcdymEyI4rkBEKDEB77J5bhZZE+7ApwTun+s7R81w3FGa9fuH4pUEXZcrPIzSjIgcuFCen50iDdbcIyA4Pzt9KpdUz5MIbKoXt2cU71CjE8oduFxZLEr+1QQuHywWJaaYn5UjIkylEhs7Dtod9hzKWpGddBxp5hAmYpNSuRF5TG79hQuyLM28hYtNHZRCqajhq5mRRLFXidMnUey9m7FUEsXZ/M29L5SK3m8vBwQSqduVVcnJZo8F/2oCl1+ZxXaDxa2p5crqZ+IQAlEEV+58O3Ikj+Me7+5ab3W+kcY1lfJ60u+85Qhlen3nVepyNNt6E655GAmq27q3yNLpMxElUext6xAkUYwpDlxsajUAFaho6w4DwPcrthtHW+eDs/cpVlx+ZVoNgCJnWxcGwJES0dYdaea4+n6wtiuOq5oQTdxsnnuLDGSj+dvlvmdNjWu2dSuuasM7UgseV1H9qwXxjtSCx2X3aDjvqCOgxzXu0RDe0Yr7nx5XggbxjiKCeNwKNKB3FBsH8bge9/Rv3pFa8LhqcpsH944TyoN7XNWGd6QWPG7l8AN6R2rB41Y/U0DvqCOgx5XXUxDvaIVoQjSVVo9r+NEQ3lGuGcLjMj8azjsKxCAeV1EL3pFa8Lh/AYbh2AJduVUxAAAAAElFTkSuQmCC) 0 0;
+    #input {
+      height: 100px;
+      width: 100%;
+      background: gray url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAIAAADIYSy/AAACwUlEQVRYhbWWsWvbQBTGX+FCG0IMUpsEksGmFOOAl4JCyZolf2GXDv0/vGgtIYIsgZgMQR4SSBzHICNsYw8dPnJ6ene6g/b0JnH67u53T0/3vg+/f/28vEioHrObh47aEYPp9Ln/YyAG1+VqcPhFDI7SzFxz/PL6ce+TGLy/Gl8cHInBYrv5/P2rGFRYgojM/fhMIuoOe/dXYyIycSvlooQSD539vSYlluoOe8VjQURmXnQATxERDmrFBSLON315BaIVl5M9LZd4sOLy6etyhcVnNw8mLpCAp/Qoxz2oI4rguO7kcdymEyI4rkBEKDEB77J5bhZZE+7ApwTun+s7R81w3FGa9fuH4pUEXZcrPIzSjIgcuFCen50iDdbcIyA4Pzt9KpdUz5MIbKoXt2cU71CjE8oduFxZLEr+1QQuHywWJaaYn5UjIkylEhs7Dtod9hzKWpGddBxp5hAmYpNSuRF5TG79hQuyLM28hYtNHZRCqajhq5mRRLFXidMnUey9m7FUEsXZ/M29L5SK3m8vBwQSqduVVcnJZo8F/2oCl1+ZxXaDxa2p5crqZ+IQAlEEV+58O3Ikj+Me7+5ab3W+kcY1lfJ60u+85Qhlen3nVepyNNt6E655GAmq27q3yNLpMxElUext6xAkUYwpDlxsajUAFaho6w4DwPcrthtHW+eDs/cpVlx+ZVoNgCJnWxcGwJES0dYdaea4+n6wtiuOq5oQTdxsnnuLDGSj+dvlvmdNjWu2dSuuasM7UgseV1H9qwXxjtSCx2X3aDjvqCOgxzXu0RDe0Yr7nx5XggbxjiKCeNwKNKB3FBsH8bge9/Rv3pFa8LhqcpsH944TyoN7XNWGd6QWPG7l8AN6R2rB41Y/U0DvqCOgx5XXUxDvaIVoQjSVVo9r+NEQ3lGuGcLjMj8azjsKxCAeV1EL3pFa8Lh/AYbh2AJduVUxAAAAAElFTkSuQmCC) 0 0;
       color: #fff;
       text-shadow: 0 0 5px #000;
-			text-align:center;
-			line-height: 100px;
+      text-align:center;
+      line-height: 100px;
       -moz-border-radius: 10px;
       -moz-box-shadow: inset 0 0 10px #000;
-		}
+    }
 
     #output {
       list-style: none;
@@ -38,17 +38,17 @@
       left: 30px;
       -moz-box-shadow: 0 0 5px #555;
     }
-		#output li pre {
+    #output li pre {
       -moz-box-shadow: 0 0 5px #555;
       -moz-corner-radius:
       text-align: left;
-			height: 60px;
-			line-height: 60px;
-			text-indent: 5px;
-			margin-left: 70px;
-			overflow: hidden;
-		}
- 	</style>
+      height: 60px;
+      line-height: 60px;
+      text-indent: 5px;
+      margin-left: 70px;
+      overflow: hidden;
+    }
+   </style>
 </head>
 <body>
   <div id="pg">
@@ -63,44 +63,44 @@
       $.d = d;
       $.s = {};
       $.v = {};
-    	$.q = {};
+      $.q = {};
       $.f = (function () { 
         return {
           scale : function (a) {
-    				var h = a.img.height;
-    		    var w = a.img.width;
+            var h = a.img.height;
+            var w = a.img.width;
             var newHeight = a.h;
             var newWidth = a.w;
-    				if (h === w) {            
-    					if (a.h < a.w) {
-    						newHeight = a.h;
-    						newWidth = a.h;
-    					} else {
-    						newHeight = a.w;
-    						newWidth = a.w;
-    					}
-    				} else {
-    					if (h < w) {
-    						if (h / w > a.h / a.w) {
-    							newHeight = a.h;
-    							newWidth = w / (h / a.h);
-    						} else {
-    							newWidth = a.w;
-    							newHeight = h / (w / a.w);
-    						}
-    					} else {
-    						if (w / h > a.w / a.h) {
-    							newWidth = a.w;
-    							newHeight = h * a.w / w;
-    						} else {
-    		          newHeight = a.h;
-    							newWidth = w / (h / a.h);
-    						}
-    					}
-    				}
-    				a.img.height = newHeight;
+            if (h === w) {            
+              if (a.h < a.w) {
+                newHeight = a.h;
+                newWidth = a.h;
+              } else {
+                newHeight = a.w;
+                newWidth = a.w;
+              }
+            } else {
+              if (h < w) {
+                if (h / w > a.h / a.w) {
+                  newHeight = a.h;
+                  newWidth = w / (h / a.h);
+                } else {
+                  newWidth = a.w;
+                  newHeight = h / (w / a.w);
+                }
+              } else {
+                if (w / h > a.w / a.h) {
+                  newWidth = a.w;
+                  newHeight = h * a.w / w;
+                } else {
+                  newHeight = a.h;
+                  newWidth = w / (h / a.h);
+                }
+              }
+            }
+            a.img.height = newHeight;
             a.img.style.marginTop = -newHeight / 2 + 'px';
-    				a.img.width = newWidth;
+            a.img.width = newWidth;
             a.img.style.marginLeft = -newWidth / 2 + 'px';
             a.b.parentNode.insertBefore(a.img, a.b);
           },
@@ -122,14 +122,14 @@
             }
           },  
           drop : function (e) {
-    				var data = e.dataTransfer;
-    				e.stopPropagation();
-    				e.preventDefault();
-    				for (var i = 0, n = data.files.length; i < n; i++) {
-    					var file = data.files[i], reader = new FileReader();
-    					reader.addEventListener("loadend", $.f.process, false);
-    					reader.readAsDataURL(file);
-    				}
+            var data = e.dataTransfer;
+            e.stopPropagation();
+            e.preventDefault();
+            for (var i = 0, n = data.files.length; i < n; i++) {
+              var file = data.files[i], reader = new FileReader();
+              reader.addEventListener("loadend", $.f.process, false);
+              reader.readAsDataURL(file);
+            }
           },    
           halt : function (e) {
             e.stopPropagation();
@@ -141,16 +141,16 @@
               $.s.input.innerHTML = 'Please try a browser with FileReader implemented.';
             } else {
               $.s.output = $.d.getElementById('output');
-      				$.s.input.addEventListener("dragenter", $.f.halt, false);
-      				$.s.input.addEventListener("dragover", $.f.halt, false);
-      				$.s.input.addEventListener("drop", $.f.drop, false);
+              $.s.input.addEventListener("dragenter", $.f.halt, false);
+              $.s.input.addEventListener("dragover", $.f.halt, false);
+              $.s.input.addEventListener("drop", $.f.drop, false);
             }
           }   
         };
       }());
       $.w.addEventListener('load', $.f.init, false);  
     }(window, document, {'k': 'URLIFY'}));
-	</script>
+  </script>
 </body>
 </html>
 
