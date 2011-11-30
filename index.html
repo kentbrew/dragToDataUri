@@ -36,8 +36,8 @@
     }
     #output li img {
       position: absolute;
-      top: 50%;
-      left: 30px;
+      max-height: 50px;
+      max-width: 50px;
       -moz-box-shadow: 0 0 5px #555;
     }
     #output li pre {
@@ -57,100 +57,84 @@
     <ul id="output"></ul>
   </div>
   <script type="text/javascript">
-    (function (w, d, a) { 
-      var $ = w[a.k] = {};
-      $.a = a;
-      $.w = w;
-      $.d = d;
-      $.s = {};
-      $.v = {};
-      $.q = {};
-      $.f = (function () { 
-        return {
-          scale : function (a) {
-            var h = a.img.height;
-            var w = a.img.width;
-            var newHeight = a.h;
-            var newWidth = a.w;
-            if (h === w) {            
-              if (a.h < a.w) {
-                newHeight = a.h;
-                newWidth = a.h;
+    (function (w, d, a) {
+      var $ = w[a.k] = {
+        "a": a, "w": w, "d": d, 
+        "s": {}, 
+        "f": (function () {
+          return {
+            process : function (e) {
+              // make a list item
+              var li = $.d.createElement("LI");      
+              // make the thumbnail image    
+              var img = document.createElement("IMG");
+              if (e.target.result.match(/^data:image/)) {
+                // an image was dropped, show it
+                img.src = e.target.result;
               } else {
-                newHeight = a.w;
-                newWidth = a.w;
+                // non-image file was dropped; show gray thumb
+                img.src = $.a.unk;
+                img.style.height = '50px';
+                img.style.width = '50px';
               }
-            } else {
-              if (h < w) {
-                if (h / w > a.h / a.w) {
-                  newHeight = a.h;
-                  newWidth = w / (h / a.h);
-                } else {
-                  newWidth = a.w;
-                  newHeight = h / (w / a.w);
-                }
+              li.appendChild(img);
+              // position the image 
+              $.w.setTimeout(function() {
+                img.style.marginTop = 40 - (img.offsetHeight / 2) + "px";
+                img.style.marginLeft = 40 - (img.offsetWidth / 2) + "px";
+              }, 1);
+              // add the data
+              var pre = $.d.createElement("PRE");
+              pre.innerHTML = e.target.result;
+              li.appendChild(pre);
+              // add the list item to th etop of the list
+              var f = $.s.output.getElementsByTagName("LI")[0];
+              if (f) {
+                f.parentNode.insertBefore(li, f);
               } else {
-                if (w / h > a.w / a.h) {
-                  newWidth = a.w;
-                  newHeight = h * a.w / w;
-                } else {
-                  newHeight = a.h;
-                  newWidth = w / (h / a.h);
-                }
+                $.s.output.appendChild(li);
+              }
+            },
+            drop : function (e) {
+              var data = e.dataTransfer;
+              e.stopPropagation();
+              e.preventDefault();
+              for (var i = 0, n = data.files.length; i < n; i++) {
+                var file = data.files[i], reader = new FileReader();
+                reader.addEventListener("loadend", $.f.process, false);
+                reader.readAsDataURL(file);
+              }
+            },
+            halt : function (e) {
+              // prevent dropped file from opening
+              e.stopPropagation();
+              e.preventDefault();
+            },
+            init : function () {
+              // $.s is a private global containing all structural elements
+              $.s.input = $.d.getElementById("input");
+              if (typeof FileReader !== "function") {
+                $.s.input.className = "no";
+                $.s.input.innerHTML = $.a.err;
+              } else {
+                $.s.input.className = "yes";
+                $.s.input.innerHTML = $.a.ready;
+                $.s.output = $.d.getElementById("output");
+                $.s.input.addEventListener("dragenter", $.f.halt, false);
+                $.s.input.addEventListener("dragover", $.f.halt, false);
+                $.s.input.addEventListener("drop", $.f.drop, false);
               }
             }
-            a.img.height = newHeight;
-            a.img.style.marginTop = -newHeight / 2 + 'px';
-            a.img.width = newWidth;
-            a.img.style.marginLeft = -newWidth / 2 + 'px';
-            a.b.parentNode.insertBefore(a.img, a.b);
-          },
-          process : function (e) {
-            var li = $.d.createElement('LI');
-            var pre = $.d.createElement('PRE');
-            pre.innerHTML = e.target.result;
-            li.appendChild(pre);
-            var img = document.createElement('IMG');
-            img.onload = function() {
-              $.f.scale({'img': this, 'h': 50, 'w': 50, 'b': pre});
-            }
-            img.src = e.target.result;
-            var f = $.s.output.getElementsByTagName('LI')[0];
-            if (f) {
-              f.parentNode.insertBefore(li, f);
-            } else {
-              $.s.output.appendChild(li);
-            }
-          },  
-          drop : function (e) {
-            var data = e.dataTransfer;
-            e.stopPropagation();
-            e.preventDefault();
-            for (var i = 0, n = data.files.length; i < n; i++) {
-              var file = data.files[i], reader = new FileReader();
-              reader.addEventListener("loadend", $.f.process, false);
-              reader.readAsDataURL(file);
-            }
-          },    
-          halt : function (e) {
-            e.stopPropagation();
-            e.preventDefault();
-          }, 
-          init : function () {
-            $.s.input = $.d.getElementById('input');
-            if (typeof FileReader !== 'function') {
-              $.s.input.innerHTML = 'Please try a browser with FileReader implemented.';
-            } else {
-              $.s.output = $.d.getElementById('output');
-              $.s.input.addEventListener("dragenter", $.f.halt, false);
-              $.s.input.addEventListener("dragover", $.f.halt, false);
-              $.s.input.addEventListener("drop", $.f.drop, false);
-            }
-          }   
-        };
-      }());
-      $.w.addEventListener('load', $.f.init, false);  
-    }(window, document, {'k': 'DRAGTODATAURI'}));
+          };
+        }())
+      };
+      $.w.addEventListener("load", $.f.init, false);
+    }(window, document, {
+      "k": "DRAGTODATAURI",
+      "err": "Please try a browser with FileReader implemented.",
+      "ready": "Drop files here to create data URIs.",
+      "unk": "data:image/gif;base64,R0lGODdhAQABAJEAAP///93d3QAAAAAAACwAAAAAAQABAAECAkwBADs=" 
+    }));
   </script>
 </body>
 </html>
